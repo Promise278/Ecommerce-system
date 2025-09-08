@@ -1,0 +1,77 @@
+[
+  {
+    "name": "promise",
+    "password": "4567",
+    "role": "admin"
+  },
+  {
+    "name": "promisepius",
+    "password": "1234",
+    "role": "user"
+  },
+  {
+    "name": "pius",
+    "password": "2008",
+    "role": "admin"
+  },
+  {
+    "name": "promotex obi",
+    "password": "1345",
+    "role": "admin"
+  },
+  {
+    "name": "phebe",
+    "password": "2008",
+    "role": "admin"
+  },
+  {
+    "name": "promise",
+    "password": "1234",
+    "role": "admin"
+  },
+  {
+    "name": "promise",
+    "password": "1234",
+    "role": "admin"
+  },
+  {
+    "name": "promise",
+    "password": "1234",
+    "role": "admin"
+  },
+  {
+    "name": "promise",
+    "password": "1234",
+    "role": "admin"
+  },
+  {
+    "name": "promise",
+    "password": "1234",
+    "role": "admin"
+  },
+  {
+    "name": "admin",
+    "password": "admin123",
+    "role": "admin"
+  },
+  {
+    "name": "admin",
+    "password": "admin1234",
+    "role": "admin"
+  },
+  {
+    "name": "admin",
+    "password": "123",
+    "role": "admin"
+  },
+  {
+    "name": "admin",
+    "password": "1234",
+    "role": "admin"
+  },
+  {
+    "name": "adin",
+    "password": "123",
+    "role": "admin"
+  }
+]

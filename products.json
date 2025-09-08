@@ -1,0 +1,149 @@
+[
+  {
+    "id": 1,
+    "productId": "PROD-001",
+    "title": "Wireless Mouse",
+    "price": 19.99
+  },
+  {
+    "id": 2,
+    "productId": "PROD-002",
+    "title": "Bluetooth Headphones",
+    "price": 49.99
+  },
+  {
+    "id": 3,
+    "productId": "PROD-003",
+    "title": "USB-C Charger",
+    "price": 15.99
+  },
+  {
+    "id": 4,
+    "productId": "PROD-004",
+    "title": "Laptop Stand",
+    "price": 29.99
+  },
+  {
+    "id": 5,
+    "productId": "PROD-005",
+    "title": "Mechanical Keyboard",
+    "price": 89.99
+  },
+  {
+    "id": 6,
+    "productId": "PROD-006",
+    "title": "Webcam HD",
+    "price": 39.99
+  },
+  {
+    "id": 7,
+    "productId": "PROD-007",
+    "title": "Portable SSD 1TB",
+    "price": 119.99
+  },
+  {
+    "id": 8,
+    "productId": "PROD-008",
+    "title": "Smartwatch",
+    "price": 199.99
+  },
+  {
+    "id": 9,
+    "productId": "PROD-009",
+    "title": "Fitness Tracker",
+    "price": 59.99
+  },
+  {
+    "id": 10,
+    "productId": "PROD-010",
+    "title": "Noise Cancelling Earbuds",
+    "price": 79.99
+  },
+  {
+    "id": 11,
+    "productId": "PROD-011",
+    "title": "Gaming Mouse Pad",
+    "price": 14.99
+  },
+  {
+    "id": 12,
+    "productId": "PROD-012",
+    "title": "Action Camera",
+    "price": 149.99
+  },
+  {
+    "id": 13,
+    "productId": "PROD-013",
+    "title": "Wireless Speaker",
+    "price": 34.99
+  },
+  {
+    "id": 14,
+    "productId": "PROD-014",
+    "title": "Tablet 10-inch",
+    "price": 249.99
+  },
+  {
+    "id": 15,
+    "productId": "PROD-015",
+    "title": "Smartphone Stand",
+    "price": 12.99
+  },
+  {
+    "id": 16,
+    "productId": "PROD-016",
+    "title": "VR Headset",
+    "price": 299.99
+  },
+  {
+    "id": 17,
+    "productId": "PROD-017",
+    "title": "Wireless Charging Pad",
+    "price": 24.99
+  },
+  {
+    "id": 18,
+    "productId": "PROD-018",
+    "title": "Bluetooth Speaker",
+    "price": 44.99
+  },
+  {
+    "id": 19,
+    "productId": "PROD-019",
+    "title": "Laptop Backpack",
+    "price": 59.99
+  },
+  {
+    "id": 20,
+    "productId": "PROD-020",
+    "title": "External Hard Drive 2TB",
+    "price": 89.99
+  },
+  {
+    "id": 21,
+    "productId": "PROD-021",
+    "title": "Wireless Earphones",
+    "price": 29.99
+  },
+  {
+    "id": 22,
+    "productId": "PROD-022",
+    "title": "Smart LED Bulb",
+    "price": 17.99
+  },
+  {
+    "id": 23,
+    "name": "dell latitude 4320",
+    "price": "99.89"
+  },
+  {
+    "id": 24,
+    "name": "lenovo thinkpad",
+    "price": "123.42"
+  },
+  {
+    "id": 25,
+    "name": "hp system good one",
+    "price": "78723.08"
+  }
+]
