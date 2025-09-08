@@ -17,7 +17,7 @@ if (!fs.existsSync("products.json")) {
 
 function showMenu() {
   console.log(chalk.blue("\n= WELCOME TO E-COMMERCE APP ="));
-  console.log("1. Admin Register");
+  console.log("1. Admin login");
   console.log("2. User Register");
   console.log("3. User Login");
   console.log(chalk.red("0: Exit\n"));
@@ -44,21 +44,24 @@ function showMenu() {
 }
 
 function adminLogin() {
-  console.log("\n= Admin Registeration =");
-  rl.question("Enter your FullName: ", (name) => {
+  console.log("\n= Admin Login =");
+ rl.question("Enter your FullName: ", (name) => {
     rl.question("Enter your password: ", (password) => {
-        if (!name || !password) {
-        console.log(chalk.red("No empty fields or spaces allowed."));
-        return register();
+      let users = [];
+      if (
+        fs.existsSync("users.json") &&
+        fs.readFileSync("users.json", "utf8").trim() !== ""
+      ) {
+        users = JSON.parse(fs.readFileSync("users.json", "utf8"));
       }
-       let users = [];
-        if ( fs.existsSync("users.json") && fs.readFileSync("users.json", "utf8").trim() !== "") {``
-            users = JSON.parse(fs.readFileSync("users.json", "utf8"));
-        }
-       const newUser = { name, password, role: "admin" };
-      users.push(newUser);
-      saveUsers(users);
-      console.log(chalk.green("Admin Registered Successfully"));
+      const user = users.find(
+        (u) => u.name === name && u.password === password
+      );
+      if (!user) {
+        console.log(chalk.red("Invalid credentials. Try again."));
+        return loginuser();
+      }
+      console.log(chalk.green(`Welcome back, ${name}!`));
       Admin();
     });
   });
@@ -145,7 +148,6 @@ function seeproducts() {
 
 function Admin() {
   console.log(chalk.hex("#FF69B4")("\n=== ADMIN MENU ==="));
-  console.log("1. Login");
   console.log("2. Add Product");
   console.log("3. See All Products");
   console.log("4. Edit Product");
