@@ -10,5 +10,17 @@
     "name": "Wireless Earphones",
     "price": 29.99,
     "date": "2025-09-08T06:39:21.561Z"
+  },
+  {
+    "id": 12,
+    "name": "Action Camera",
+    "price": 149.99,
+    "date": "2025-09-08T10:03:04.098Z"
+  },
+  {
+    "id": 21,
+    "name": "Wireless Earphones",
+    "price": 29.99,
+    "date": "2025-09-08T10:33:43.725Z"
   }
 ]

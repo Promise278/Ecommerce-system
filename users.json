@@ -73,5 +73,20 @@
     "name": "adin",
     "password": "123",
     "role": "admin"
+  },
+  {
+    "name": "wds",
+    "password": "12",
+    "role": "admin"
+  },
+  {
+    "name": "dasc",
+    "password": "123",
+    "role": "admin"
+  },
+  {
+    "name": "dfa",
+    "password": "12",
+    "role": "admin"
   }
 ]

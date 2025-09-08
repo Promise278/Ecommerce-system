@@ -246,6 +246,130 @@ function seeproductsmenu() {
   });
 }
 
+function searchorder() {
+  console.log(chalk.yellow("\n=== SEARCH ORDER ==="));
+
+  if (!fs.existsSync("orders.json") || fs.readFileSync("orders.json", "utf8").trim() === "") {
+    console.log(chalk.red("No orders found."));
+    return registerMenu();
+  }
+
+  let orders = [];
+  try {
+    orders = JSON.parse(fs.readFileSync("orders.json", "utf8"));
+  } catch (e) {
+    console.log(chalk.red("Error parsing orders data."));
+    return registerMenu();
+  }
+
+  rl.question("Enter Product Name or ID to search: ", (query) => {
+    const foundOrders = orders.filter(
+      (order) =>
+        order.id.toString() === query.toString() || 
+        order.name.toLowerCase().includes(query.toLowerCase())
+    );
+
+    if (foundOrders.length === 0) {
+      console.log(chalk.red("No order found with that ID or Name."));
+    } else {
+      console.log(chalk.green(`\nFound ${foundOrders.length} matching order(s):`));
+      foundOrders.forEach((order, index) => {
+        console.table({
+          OrderNo: index + 1,
+          ID: order.id,
+          Name: order.title,
+          Price: `$${order.price}`,
+          Date: order.date,
+        });
+      });
+    }
+
+    registerMenu();
+  });
+}
+
+function processOrders () {
+ console.log(chalk.yellow("\n=== PROCESS ORDER ==="));
+
+if (!fs.existsSync("orders.json") || fs.readFileSync("orders.json", "utf8").trim() === "") {
+    console.log(chalk.red("No orders found."));
+    return Admin();
+  }
+
+  let orders = [];
+  try {
+    orders = JSON.parse(fs.readFileSync("orders.json", "utf8"));
+  } catch (e) {
+    console.log(chalk.red("Error parsing orders data."));
+    return Admin();
+  }
+
+  if (orders.length === 0) {
+    console.log(chalk.red("No orders available."));
+    return Admin();
+  }
+
+  console.log(chalk.green("\nAll User Orders:"));
+  orders.forEach((order, index) => {
+    console.table({
+      OrderNo: index + 1,
+      ProductID: order.id,
+      ProductName: order.name,
+      Price: `$${order.price}`,
+      Date: order.date,
+    });
+  });
+  Admin();
+};   
+
+function editproducts() {
+  console.log(chalk.yellow("\n=== EDIT PRODUCT ==="));
+
+  if (!fs.existsSync("products.json") || fs.readFileSync("products.json", "utf8").trim() === "") {
+    console.log(chalk.red("No products found."));
+    return Admin();
+  }
+
+  let products = [];
+  try {
+    products = JSON.parse(fs.readFileSync("products.json", "utf8"));
+  } catch (e) {
+    console.log(chalk.red("Error parsing products data."));
+    return Admin();
+  }
+
+  rl.question("Enter Product ID to edit: ", (id) => {
+    const productIndex = products.findIndex((p) => p.id === Number(id));
+
+    if (productIndex === -1) {
+      console.log(chalk.red("No product found with that ID."));
+      return Admin();
+    }
+
+    const product = products[productIndex];
+    console.log(chalk.green("\nCurrent Product Details:"));
+    console.table({
+      ID: product.id,
+      Name: product.title,
+      Price: `$${product.price}`,
+    });
+
+    rl.question(`Enter new name "${product.name}"): `, (newName) => {
+      rl.question(`Enter new price "${product.price}"): `, (newPrice) => {
+        products[productIndex].name = newName.trim() !== "" ? newName : product.name;
+        products[productIndex].price = newPrice.trim() !== "" ? Number(newPrice) : product.price;
+
+        fs.writeFileSync("products.json", JSON.stringify(products, null, 2));
+
+        console.log(chalk.green("Product updated successfully!"));
+        Admin();
+      });
+    });
+  });
+}
+
+
+
 function singleaproducts() {
   console.log("\n=== SINGLE PRODUCT ===");
 
@@ -433,7 +557,7 @@ function seeOrders() {
       console.table({
         OrderNo: index + 1,
         ID: order.id,
-        Name: order.name,
+        Name: order.title,
         Price: `$${order.price}`,
         Date: order.date,
       });
